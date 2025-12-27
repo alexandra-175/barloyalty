@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/barloyalty
+    username: postgres
+    password: 1q2w3e
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+
+
+jwt:
+  secret: my-dev-secret-key-should-be-long
+  expiration-minutes: 60
+
+qr:
+  service-url: http://localhost:8001
