@@ -22,3 +22,6 @@ jobs:
 
       - name: Build with Maven (skip tests)
         run: mvn clean package -DskipTests
+
+      - name: Build Docker image
+        run: docker build -t barloyalty-gateway .
